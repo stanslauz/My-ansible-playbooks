@@ -1,0 +1,13 @@
+- name: configure nginx web server
+  hosts: tracom
+  tasks:
+  - name: install nginx server
+    yum:
+      name: nginx
+      state: latest
+    become: yes
+  - name: start nginx server
+    service:
+      name: nginx
+      state: started
+    become: yes
